@@ -1,0 +1,48 @@
+name: Auto Build and Push
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'bookmarklets/*/src/**'
+      - 'libs/*/src/**'
+      - 'tools/*/src/**'
+      - 'tools/*/templates/**'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_PAT }}
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build
+      run: npm run build
+    
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+    
+    - name: Commit and push if changes
+      if: steps.git-check.outputs.changes == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add -A
+        git commit -m "Auto-build: Update compiled bookmarklets [skip ci]"
+        git push

@@ -1,0 +1,89 @@
+# Dependencies
+node_modules/
+/tools/*/node_modules/
+/bookmarklets/*/node_modules/
+package-lock.json
+yarn.lock
+yarn-error.log
+
+# Build directories
+dist/
+build/
+/bookmarklets/*/dist/
+/bookmarklets/*/build/
+/tools/*/dist/
+/tools/*/build/
+
+# Compiled files
+*.min.js
+*.bundle.js
+__target__/
+__javascript__/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.npm
+.eslintcache
+.stylelintcache
+.cache
+/temp
+/.tmp
+/tmp
+
+# Testing
+/coverage
+/.nyc_output
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Specific to Python in the bookmarklet templates
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.env/
+env.bak/
+venv.bak/
+/tools/create-bookmarklet/templates/python/**/brython/
+
+# Specific to Ruby in the bookmarklet templates
+*.gem
+*.rbc
+.bundle/
+/tools/create-bookmarklet/templates/ruby/**/opal/
+
+# Project specific
+backup/
+gg.py
+file_contents.txt
