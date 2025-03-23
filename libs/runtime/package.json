@@ -1,0 +1,25 @@
+{
+  "name": "@bookmarkletkit/runtime",
+  "version": "1.0.0",
+  "description": "Minimal JSX runtime for bookmarklets",
+  "main": "src/jsx-runtime.js",
+  "files": [
+      "src/"
+  ],
+  "keywords": [
+      "bookmarklet",
+      "jsx",
+      "react",
+      "runtime"
+  ],
+  "author": "Damion Rashford",
+  "license": "MIT",
+  "publishConfig": {
+      "access": "public"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/DamionR/BookmarkletKit.git",
+      "directory": "libs/runtime"
+  }
+}

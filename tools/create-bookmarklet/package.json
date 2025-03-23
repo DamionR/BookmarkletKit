@@ -1,11 +1,14 @@
-
 {
-  "name": "create-bookmarklet-tool",
-  "version": "1.0.0",
-  "description": "A tool to create bookmarklets in various languages.",
+  "name": "@bookmarkletkit/create-bookmarklet",
+  "version": "1.0.1",
+  "description": "Advanced bookmarklet project generator",
   "main": "bin/create.js",
   "bin": {
     "create-bookmarklet": "bin/create.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
   },
   "keywords": [
     "bookmarklet",
@@ -14,24 +17,36 @@
     "typescript",
     "react",
     "python",
-    "ruby"
+    "ruby",
+    "cli-tool"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Damion Rashford",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
     "fs-extra": "^11.2.0",
     "inquirer": "^8.2.4"
   },
-    "files": [
-        "bin/",
-        "templates/"
-    ],
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "jest": "^27.0.0"
+  },
+  "files": [
+    "bin/",
+    "templates/"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/bookmarklet-factory.git"
+    "url": "https://github.com/DamionR/BookmarkletKit.git",
+    "directory": "tools/create-bookmarklet"
   },
   "bugs": {
-    "url": "https://github.com/your-username/bookmarklet-factory/issues"
+    "url": "https://github.com/DamionR/BookmarkletKit/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

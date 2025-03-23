@@ -1,5 +1,5 @@
 {
-    "name": "@bookmarklet-maker/pii-remover",
+    "name": "@bookmarkletkit/pii-remover",
     "version": "1.0.0",
     "description": "Bookmarklet to redact PII from copied text",
     "main": "dist/index.js",
@@ -9,11 +9,21 @@
     "keywords": [
         "bookmarklet",
         "pii",
-        "redaction"
+        "redaction",
+        "privacy"
     ],
     "author": "Damion Rashford",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DamionR/BookmarkletKit.git",
+        "directory": "bookmarklets/pii-remover"
+    },
     "devDependencies": {
+        "fs-extra": "^11.2.0",
         "terser": "^5.27.0"
     }
 }

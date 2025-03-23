@@ -1,4 +1,4 @@
-name: Auto Build and Push
+name: BookmarkletKit CI/CD
 
 on:
   push:
@@ -13,16 +13,36 @@ on:
   workflow_dispatch:
 
 jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Lint
+      run: npm run lint
+    
+    - name: Run tests
+      run: npm test
+
   build:
+    needs: lint-and-test
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         token: ${{ secrets.GH_PAT }}
     
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
@@ -46,3 +66,14 @@ jobs:
         git add -A
         git commit -m "Auto-build: Update compiled bookmarklets [skip ci]"
         git push
+
+  release:
+    needs: [lint-and-test, build]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npx semantic-release

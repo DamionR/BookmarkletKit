@@ -1,4 +1,4 @@
-# @bookmarklet-maker/flow-run-logs
+# @bookmarkletkit/flow-run-logs
 
 [![Bookmarklet Status](https://img.shields.io/badge/status-ready-brightgreen.svg)](https://shields.io/)
 
@@ -30,15 +30,17 @@ The bookmarklet works by:
 
 This package is part of the BookmarkletKit monorepo. You can build it individually:
 
-cd /Users/damionrashford/BookmarkletKit/bookmarklets/bookmarklet-flow-run-logs
+```bash
+cd /Users/damionrashford/BookmarkletKit/bookmarklets/flow-run-logs
 npm install
 npm run build
+```
 
 This will regenerate both unminified and minified versions in the `dist` directory.
 
 ## Contributing
 
-If you find a bug or have a suggestion for improvement, please open an issue or submit a pull request on the GitHub repository.
+If you find a bug or have a suggestion for improvement, please open an issue or submit a pull request on the [GitHub repository](https://github.com/DamionR/BookmarkletKit).
 
 ## License
 

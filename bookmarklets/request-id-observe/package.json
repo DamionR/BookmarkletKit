@@ -1,5 +1,5 @@
 {
-    "name": "@bookmarklet-maker/request-id-observe",
+    "name": "@bookmarkletkit/request-id-observe",
     "version": "1.0.0",
     "description": "Bookmarklet to open Observe investigation from a Request ID",
     "main": "dist/index.js",
@@ -14,7 +14,16 @@
     ],
     "author": "Damion Rashford",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DamionR/BookmarkletKit.git",
+        "directory": "bookmarklets/request-id-observe"
+    },
     "devDependencies": {
+        "fs-extra": "^11.2.0",
         "terser": "^5.27.0"
     }
 }
