@@ -1,15 +1,15 @@
 {
-    "name": "@bookmarklets/pii-remover",
+    "name": "@bookmarklet-maker/flow-run-logs",
     "version": "1.0.0",
-    "description": "Bookmarklet to redact PII from copied text",
+    "description": "Bookmarklet to open Flow run logs",
     "main": "dist/index.js",
     "scripts": {
         "build": "node build.js"
     },
     "keywords": [
         "bookmarklet",
-        "pii",
-        "redaction"
+        "flow",
+        "shopify"
     ],
     "author": "Damion Rashford",
     "license": "MIT",

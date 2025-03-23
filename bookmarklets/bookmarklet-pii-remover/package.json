@@ -1,16 +1,15 @@
 {
-    "name": "@bookmarklets/request-id-observe",
+    "name": "@bookmarklet-maker/pii-remover",
     "version": "1.0.0",
-    "description": "Bookmarklet to open Observe investigation from a Request ID",
+    "description": "Bookmarklet to redact PII from copied text",
     "main": "dist/index.js",
     "scripts": {
         "build": "node build.js"
     },
     "keywords": [
         "bookmarklet",
-        "observe",
-        "shopify",
-        "request-id"
+        "pii",
+        "redaction"
     ],
     "author": "Damion Rashford",
     "license": "MIT",

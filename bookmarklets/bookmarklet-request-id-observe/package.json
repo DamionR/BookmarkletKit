@@ -1,15 +1,16 @@
 {
-    "name": "@bookmarklets/flow-run-logs",
+    "name": "@bookmarklet-maker/request-id-observe",
     "version": "1.0.0",
-    "description": "Bookmarklet to open Flow run logs",
+    "description": "Bookmarklet to open Observe investigation from a Request ID",
     "main": "dist/index.js",
     "scripts": {
         "build": "node build.js"
     },
     "keywords": [
         "bookmarklet",
-        "flow",
-        "shopify"
+        "observe",
+        "shopify",
+        "request-id"
     ],
     "author": "Damion Rashford",
     "license": "MIT",
